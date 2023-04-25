@@ -78,7 +78,13 @@
                     {% if comments %}
                         <ul>
                             {% for comment in comments %}
-                                <li><b>{{ comment.username }}:</b> {{ comment.comment }}</li>
+                                <li>
+                                    <b>{{ comment.username }}:</b> {{ comment.comment }}
+                                    <br>
+                                        <span style="color:grey; font-size: 80%;">
+                                            {{ comment.timestamp}}
+                                        </span>
+                                </li>
                             {% endfor %}
                         </ul>
                     {% else %}

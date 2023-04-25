@@ -2,6 +2,7 @@
 from google.cloud import storage
 from google.cloud.exceptions import NotFound, Forbidden, Conflict
 from base64 import b64encode
+from datetime import datetime
 import hashlib
 import json
 import os
@@ -124,7 +125,8 @@ class Backend:
             except json.JSONDecodeError:
                 existing_comments = []
 
-        existing_comments.append({"username": username, "comment": comment})
+        current_time = datetime.now().strftime("%m/%Y")
+        existing_comments.append({"username": username, "comment": comment, "timestamp": current_time})
         comments_blob.upload_from_string(json.dumps(existing_comments))
 
     def get_comments(self, pagename):
