@@ -7,7 +7,7 @@ import hashlib
 import json
 import os
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "dijproject-d5a5f3cc6a38.json"
+#os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "dijproject-d5a5f3cc6a38.json"
 
 
 class Backend:
